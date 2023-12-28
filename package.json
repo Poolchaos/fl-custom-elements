@@ -6,7 +6,6 @@
   "scripts": {
     "lint": "run-p lint-*",
     "lint-src": "eslint src --fix",
-    "lint-tests": "eslint __tests__ --fix",
     "precommit": "lint-staged",
     "commitmsg": "commitlint -e",
     "babel": "babel src -d lib -s",
@@ -53,9 +52,6 @@
         "statements": 100
       }
     },
-    "testMatch": [
-      "**/__tests__/**/*.spec.js"
-    ]
   },
   "dependencies": {
     "uuid": "^3.1.0"

@@ -9,7 +9,6 @@ class CustomElement {
   }
 
   setupUsables (config) {
-    console.log(' config >>>> ', config);
     this.shadowRoots = {};
     this.hosts = {};
     this.tagName = config.tagName;
@@ -40,10 +39,8 @@ class CustomElement {
     this.createShadowDom(_id) //
       .then(
         () => {
-          console.log('loading new view', this.shadowRoots[_id]);
           $(this.shadowRoots[_id]).load(this.template);
 
-          console.log(' loading >>>> ', this.template);
           const script = document.createElement('script');
 
           script.type = 'text/javascript';
@@ -51,7 +48,6 @@ class CustomElement {
           this.shadowRoots[_id].appendChild(script);
         },
         () => {
-          console.log(' :::: loading >>>> ', this.template);
           $(el).load(this.template);
         }
       );
